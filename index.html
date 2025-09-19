@@ -70,7 +70,7 @@
         {
             center: [47.2, -71.2],
             crs: L.CRS.EPSG3857,
-            zoom: 6,
+            zoom: 8.2,
             zoomControl: true,
             preferCanvas: false,
         }
@@ -78,13 +78,30 @@
     L.control.scale().addTo(map_a3a852d1b15d680a398c4bcde79848e8);
 
 
-
-
-
     var tile_layer_550e0c2f73d7429a4733d200c3a7434f = L.tileLayer(
         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
         { "attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false }
     ).addTo(map_a3a852d1b15d680a398c4bcde79848e8);
+
+
+    var marker_000056c7d1a504914cf93b624384643d = L.marker(
+        [45.46945, -73.74317],
+        {}
+    ).addTo(map_a3a852d1b15d680a398c4bcde79848e8);
+    var icon_0000d1dd6a348244fb6142593dc243be = L.AwesomeMarkers.icon(
+        { "extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon" }
+    );
+    marker_000056c7d1a504914cf93b624384643d.setIcon(icon_0000d1dd6a348244fb6142593dc243be);
+    marker_000056c7d1a504914cf93b624384643d.bindTooltip(`<div>Aéroport international Montréal - Trudeau</div>`,
+        { "sticky": true }
+    );
+    var marker_000047a1cba99b0d4dcff6c6a37de4a4 = L.marker(
+        [45.46945, -73.74317],
+        {}
+    ).addTo(map_a3a852d1b15d680a398c4bcde79848e8);
+    var div_icon_0000dd0b47e3832560c5f3a93d79c244 = L.divIcon({ "className": "empty", "html": "\u003cdiv style=\"white-space:nowrap; font-size:14px; background:rgba(255,255,255,0.65); padding:2px 6px; border-radius:6px; border:1px solid #999;\"\u003eA\u00e9roport Montr\u00e9al - Trudeau\u003cbr/\u003e26 septembre - 15 octobre\u003c/div\u003e", "iconAnchor": [0, 0], "iconSize": [260, 36] });
+    marker_000047a1cba99b0d4dcff6c6a37de4a4.setIcon(div_icon_0000dd0b47e3832560c5f3a93d79c244);
+
 
 
     var marker_ef2556c7d1a504914cf93b624384643d = L.marker(
