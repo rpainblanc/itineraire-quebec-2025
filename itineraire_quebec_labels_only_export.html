@@ -1,179 +1,202 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    
+
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    
-        <script>
-            L_NO_TOUCH = false;
-            L_DISABLE_3D = false;
-        </script>
-    
-    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
-    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+
+    <script>
+        L_NO_TOUCH = false;
+        L_DISABLE_3D = false;
+    </script>
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <style>
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-    
-            <meta name="viewport" content="width=device-width,
-                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-            <style>
-                #map_bb56f90a1085d4469e71b3e227427f67 {
-                    position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-            </style>
-        
-</head>
-<body>
-    
-    
-            <div class="folium-map" id="map_bb56f90a1085d4469e71b3e227427f67" ></div>
-        
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css" />
 
-<script src="https://unpkg.com/leaflet-simple-map-screenshoter@0.7.1/dist/leaflet-simple-map-screenshoter.min.js"></script>
-<script>
-(function() {
-  var mapObj = map_bb56f90a1085d4469e71b3e227427f67;
-  var screenshoter = L.simpleMapScreenshoter({
-    hidden: false,
-    preventDownload: false,
-    position: 'topleft',
-    screenName: 'itineraire_quebec_labels_only',
-    domtoimageOptions: { bgcolor: 'white' }
-  }).addTo(mapObj);
-  var CustomCtrl = L.Control.extend({
-    options: { position: 'topleft' },
-    onAdd: function(map) {
-      var container = L.DomUtil.create('div', 'leaflet-bar');
-      var a = L.DomUtil.create('a', '', container);
-      a.href = '#';
-      a.title = 'Exporter en PNG (3000x2000)';
-      a.innerHTML = 'PNG';
-      a.style.textAlign = 'center';
-      a.style.width = '32px';
-      a.style.lineHeight = '32px';
-      L.DomEvent.on(a, 'click', function(e) {
-        L.DomEvent.stopPropagation(e);
-        L.DomEvent.preventDefault(e);
-        screenshoter.takeScreen('image', {
-          mimeType: 'image/png',
-          caption: 'Itinéraire Québec (étiquettes seules)',
-          width: 3000,
-          height: 2000
-        });
-      });
-      return container;
-    }
-  });
-  mapObj.addControl(new CustomCtrl());
-})();
-</script>
+    <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>
+        #map_bb56f90a1085d4469e71b3e227427f67 {
+            position: relative;
+            width: 100.0%;
+            height: 100.0%;
+            left: 0.0%;
+            top: 0.0%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="folium-map" id="map_bb56f90a1085d4469e71b3e227427f67"></div>
+
+
+    <script
+        src="https://unpkg.com/leaflet-simple-map-screenshoter@0.7.1/dist/leaflet-simple-map-screenshoter.min.js"></script>
+    <script>
+        (function () {
+            var mapObj = map_bb56f90a1085d4469e71b3e227427f67;
+            var screenshoter = L.simpleMapScreenshoter({
+                hidden: false,
+                preventDownload: false,
+                position: 'topleft',
+                screenName: 'itineraire_quebec_labels_only',
+                domtoimageOptions: { bgcolor: 'white' }
+            }).addTo(mapObj);
+            var CustomCtrl = L.Control.extend({
+                options: { position: 'topleft' },
+                onAdd: function (map) {
+                    var container = L.DomUtil.create('div', 'leaflet-bar');
+                    var a = L.DomUtil.create('a', '', container);
+                    a.href = '#';
+                    a.title = 'Exporter en PNG (3000x2000)';
+                    a.innerHTML = 'PNG';
+                    a.style.textAlign = 'center';
+                    a.style.width = '32px';
+                    a.style.lineHeight = '32px';
+                    L.DomEvent.on(a, 'click', function (e) {
+                        L.DomEvent.stopPropagation(e);
+                        L.DomEvent.preventDefault(e);
+                        screenshoter.takeScreen('image', {
+                            mimeType: 'image/png',
+                            caption: 'Itinéraire Québec (étiquettes seules)',
+                            width: 3000,
+                            height: 2000
+                        });
+                    });
+                    return container;
+                }
+            });
+            mapObj.addControl(new CustomCtrl());
+        })();
+    </script>
 
 </body>
 <script>
-    
-    
-            var map_bb56f90a1085d4469e71b3e227427f67 = L.map(
-                "map_bb56f90a1085d4469e71b3e227427f67",
-                {
-                    center: [47.2, -71.2],
-                    crs: L.CRS.EPSG3857,
-                    zoom: 6,
-                    zoomControl: true,
-                    preferCanvas: false,
-                }
-            );
-            L.control.scale().addTo(map_bb56f90a1085d4469e71b3e227427f67);
 
-            
 
-        
-    
-            var tile_layer_9b6bffeb9e554a17aa83a0f5e71dba79 = L.tileLayer(
-                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_bb56f90a1085d4469e71b3e227427f67);
-        
-    
-            var marker_19ebd5bf3345ba869f501f66dd92900b = L.marker(
-                [45.5075, -73.573],
-                {}
-            ).addTo(map_bb56f90a1085d4469e71b3e227427f67);
-        
-    
-            var div_icon_2cce638b4d459353027cfc6bfa4a1386 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        white-space:nowrap;\n        font-size:14px;\n        background:rgba(255,255,255,0.9);\n        padding:2px 8px;\n        border-radius:6px;\n        border:1px solid #999;\n        box-shadow: 0 1px 2px rgba(0,0,0,0.2);\n    \"\u003e\n      \u003cb\u003e1\u003c/b\u003e \u2022 Montr\u00e9al (Hilton Garden Inn)\u003cbr/\u003e26\u201328 sept 2025\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [260, 36]});
-            marker_19ebd5bf3345ba869f501f66dd92900b.setIcon(div_icon_2cce638b4d459353027cfc6bfa4a1386);
-        
-    
-            var marker_94b97cd942c7be2122e33ccd1ee57fdb = L.marker(
-                [46.4712, -73.1472],
-                {}
-            ).addTo(map_bb56f90a1085d4469e71b3e227427f67);
-        
-    
-            var div_icon_15d98359e3dde0ec41faa519df830a92 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        white-space:nowrap;\n        font-size:14px;\n        background:rgba(255,255,255,0.9);\n        padding:2px 8px;\n        border-radius:6px;\n        border:1px solid #999;\n        box-shadow: 0 1px 2px rgba(0,0,0,0.2);\n    \"\u003e\n      \u003cb\u003e2\u003c/b\u003e \u2022 Saint\u2011Alexis\u2011des\u2011Monts\u003cbr/\u003e29\u201330 sept 2025\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [260, 36]});
-            marker_94b97cd942c7be2122e33ccd1ee57fdb.setIcon(div_icon_15d98359e3dde0ec41faa519df830a92);
-        
-    
-            var marker_cbf0939ff0f5ed109bd57a45ea97a074 = L.marker(
-                [47.6541, -70.1515],
-                {}
-            ).addTo(map_bb56f90a1085d4469e71b3e227427f67);
-        
-    
-            var div_icon_4eb099e5e9febcb2ff53c9f8f117b4b3 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        white-space:nowrap;\n        font-size:14px;\n        background:rgba(255,255,255,0.9);\n        padding:2px 8px;\n        border-radius:6px;\n        border:1px solid #999;\n        box-shadow: 0 1px 2px rgba(0,0,0,0.2);\n    \"\u003e\n      \u003cb\u003e3\u003c/b\u003e \u2022 La Malbaie\u003cbr/\u003e1\u20133 oct 2025\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [260, 36]});
-            marker_cbf0939ff0f5ed109bd57a45ea97a074.setIcon(div_icon_4eb099e5e9febcb2ff53c9f8f117b4b3);
-        
-    
-            var marker_e0e15488869dedf9825e5923fbb11277 = L.marker(
-                [48.5329, -71.0833],
-                {}
-            ).addTo(map_bb56f90a1085d4469e71b3e227427f67);
-        
-    
-            var div_icon_50e4fa44c4b66b38735b78190a4261c0 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        white-space:nowrap;\n        font-size:14px;\n        background:rgba(255,255,255,0.9);\n        padding:2px 8px;\n        border-radius:6px;\n        border:1px solid #999;\n        box-shadow: 0 1px 2px rgba(0,0,0,0.2);\n    \"\u003e\n      \u003cb\u003e4\u003c/b\u003e \u2022 Saint\u2011Honor\u00e9\u003cbr/\u003e4\u20136 oct 2025\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [260, 36]});
-            marker_e0e15488869dedf9825e5923fbb11277.setIcon(div_icon_50e4fa44c4b66b38735b78190a4261c0);
-        
-    
-            var marker_e8bfd15cc78709b785ff7dbaa4d32040 = L.marker(
-                [46.885, -71.295],
-                {}
-            ).addTo(map_bb56f90a1085d4469e71b3e227427f67);
-        
-    
-            var div_icon_943eb0414e7a8ad16b020aabb3856111 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        white-space:nowrap;\n        font-size:14px;\n        background:rgba(255,255,255,0.9);\n        padding:2px 8px;\n        border-radius:6px;\n        border:1px solid #999;\n        box-shadow: 0 1px 2px rgba(0,0,0,0.2);\n    \"\u003e\n      \u003cb\u003e5\u003c/b\u003e \u2022 Qu\u00e9bec (153 Chemin du Lac)\u003cbr/\u003e7\u20139 oct 2025\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [260, 36]});
-            marker_e8bfd15cc78709b785ff7dbaa4d32040.setIcon(div_icon_943eb0414e7a8ad16b020aabb3856111);
-        
-    
-            var marker_3416f8d02053722f6de6446fe977ea5a = L.marker(
-                [45.4, -71.9],
-                {}
-            ).addTo(map_bb56f90a1085d4469e71b3e227427f67);
-        
-    
-            var div_icon_04adb7d2bd0bf2846df6c4fc227ad7a9 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        white-space:nowrap;\n        font-size:14px;\n        background:rgba(255,255,255,0.9);\n        padding:2px 8px;\n        border-radius:6px;\n        border:1px solid #999;\n        box-shadow: 0 1px 2px rgba(0,0,0,0.2);\n    \"\u003e\n      \u003cb\u003e6\u003c/b\u003e \u2022 Sherbrooke\u003cbr/\u003e10\u201311 oct 2025\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [260, 36]});
-            marker_3416f8d02053722f6de6446fe977ea5a.setIcon(div_icon_04adb7d2bd0bf2846df6c4fc227ad7a9);
-        
-    
-            var marker_cf64b2d0087c4c9f230c1c9904619960 = L.marker(
-                [45.509, -73.5619],
-                {}
-            ).addTo(map_bb56f90a1085d4469e71b3e227427f67);
-        
-    
-            var div_icon_1bb6f824c38841792a27e59d16c56512 = L.divIcon({"className": "empty", "html": "\n    \u003cdiv style=\"\n        white-space:nowrap;\n        font-size:14px;\n        background:rgba(255,255,255,0.9);\n        padding:2px 8px;\n        border-radius:6px;\n        border:1px solid #999;\n        box-shadow: 0 1px 2px rgba(0,0,0,0.2);\n    \"\u003e\n      \u003cb\u003e7\u003c/b\u003e \u2022 Montr\u00e9al (Best Western Plus)\u003cbr/\u003e12\u201314 oct 2025\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [260, 36]});
-            marker_cf64b2d0087c4c9f230c1c9904619960.setIcon(div_icon_1bb6f824c38841792a27e59d16c56512);
-        
+    var map_bb56f90a1085d4469e71b3e227427f67 = L.map(
+        "map_bb56f90a1085d4469e71b3e227427f67",
+        {
+            center: [47.2, -71.2],
+            crs: L.CRS.EPSG3857,
+            zoom: 6,
+            zoomControl: true,
+            preferCanvas: false,
+        }
+    );
+    L.control.scale().addTo(map_bb56f90a1085d4469e71b3e227427f67);
+
+
+
+
+
+    var tile_layer_9b6bffeb9e554a17aa83a0f5e71dba79 = L.tileLayer(
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        { "attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false }
+    ).addTo(map_bb56f90a1085d4469e71b3e227427f67);
+
+
+    var marker_19ebd5bf3345ba869f501f66dd92900b = L.marker(
+        [45.5075, -73.573],
+        {}
+    ).addTo(map_bb56f90a1085d4469e71b3e227427f67);
+
+
+    var div_icon_2cce638b4d459353027cfc6bfa4a1386 = L.divIcon({ "className": "empty", "html": "\n    \u003cdiv style=\"\n        white-space:nowrap;\n        font-size:14px;\n        background:rgba(255,255,255,0.9);\n        padding:2px 8px;\n        border-radius:6px;\n        border:1px solid #999;\n        box-shadow: 0 1px 2px rgba(0,0,0,0.2);\n    \"\u003e\n      \u003cb\u003e1\u003c/b\u003e \u2022 Montr\u00e9al (Hilton Garden Inn)\u003cbr/\u003e26\u201328 sept 2025\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [260, 36] });
+    marker_19ebd5bf3345ba869f501f66dd92900b.setIcon(div_icon_2cce638b4d459353027cfc6bfa4a1386);
+
+
+    var marker_94b97cd942c7be2122e33ccd1ee57fdb = L.marker(
+        [46.4712, -73.1472],
+        {}
+    ).addTo(map_bb56f90a1085d4469e71b3e227427f67);
+
+
+    var div_icon_15d98359e3dde0ec41faa519df830a92 = L.divIcon({ "className": "empty", "html": "\n    \u003cdiv style=\"\n        white-space:nowrap;\n        font-size:14px;\n        background:rgba(255,255,255,0.9);\n        padding:2px 8px;\n        border-radius:6px;\n        border:1px solid #999;\n        box-shadow: 0 1px 2px rgba(0,0,0,0.2);\n    \"\u003e\n      \u003cb\u003e2\u003c/b\u003e \u2022 Saint\u2011Alexis\u2011des\u2011Monts\u003cbr/\u003e29\u201330 sept 2025\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [260, 36] });
+    marker_94b97cd942c7be2122e33ccd1ee57fdb.setIcon(div_icon_15d98359e3dde0ec41faa519df830a92);
+
+
+    var marker_cbf0939ff0f5ed109bd57a45ea97a074 = L.marker(
+        [47.6541, -70.1515],
+        {}
+    ).addTo(map_bb56f90a1085d4469e71b3e227427f67);
+
+
+    var div_icon_4eb099e5e9febcb2ff53c9f8f117b4b3 = L.divIcon({ "className": "empty", "html": "\n    \u003cdiv style=\"\n        white-space:nowrap;\n        font-size:14px;\n        background:rgba(255,255,255,0.9);\n        padding:2px 8px;\n        border-radius:6px;\n        border:1px solid #999;\n        box-shadow: 0 1px 2px rgba(0,0,0,0.2);\n    \"\u003e\n      \u003cb\u003e3\u003c/b\u003e \u2022 La Malbaie\u003cbr/\u003e1\u20133 oct 2025\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [260, 36] });
+    marker_cbf0939ff0f5ed109bd57a45ea97a074.setIcon(div_icon_4eb099e5e9febcb2ff53c9f8f117b4b3);
+
+
+    var marker_e0e15488869dedf9825e5923fbb11277 = L.marker(
+        [48.5329, -71.0833],
+        {}
+    ).addTo(map_bb56f90a1085d4469e71b3e227427f67);
+
+
+    var div_icon_50e4fa44c4b66b38735b78190a4261c0 = L.divIcon({ "className": "empty", "html": "\n    \u003cdiv style=\"\n        white-space:nowrap;\n        font-size:14px;\n        background:rgba(255,255,255,0.9);\n        padding:2px 8px;\n        border-radius:6px;\n        border:1px solid #999;\n        box-shadow: 0 1px 2px rgba(0,0,0,0.2);\n    \"\u003e\n      \u003cb\u003e4\u003c/b\u003e \u2022 Saint\u2011Honor\u00e9\u003cbr/\u003e4\u20136 oct 2025\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [260, 36] });
+    marker_e0e15488869dedf9825e5923fbb11277.setIcon(div_icon_50e4fa44c4b66b38735b78190a4261c0);
+
+
+    var marker_e8bfd15cc78709b785ff7dbaa4d32040 = L.marker(
+        [46.885, -71.295],
+        {}
+    ).addTo(map_bb56f90a1085d4469e71b3e227427f67);
+
+
+    var div_icon_943eb0414e7a8ad16b020aabb3856111 = L.divIcon({ "className": "empty", "html": "\n    \u003cdiv style=\"\n        white-space:nowrap;\n        font-size:14px;\n        background:rgba(255,255,255,0.9);\n        padding:2px 8px;\n        border-radius:6px;\n        border:1px solid #999;\n        box-shadow: 0 1px 2px rgba(0,0,0,0.2);\n    \"\u003e\n      \u003cb\u003e5\u003c/b\u003e \u2022 Qu\u00e9bec (153 Chemin du Lac)\u003cbr/\u003e7\u20139 oct 2025\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [260, 36] });
+    marker_e8bfd15cc78709b785ff7dbaa4d32040.setIcon(div_icon_943eb0414e7a8ad16b020aabb3856111);
+
+
+    var marker_3416f8d02053722f6de6446fe977ea5a = L.marker(
+        [45.4, -71.9],
+        {}
+    ).addTo(map_bb56f90a1085d4469e71b3e227427f67);
+
+
+    var div_icon_04adb7d2bd0bf2846df6c4fc227ad7a9 = L.divIcon({ "className": "empty", "html": "\n    \u003cdiv style=\"\n        white-space:nowrap;\n        font-size:14px;\n        background:rgba(255,255,255,0.9);\n        padding:2px 8px;\n        border-radius:6px;\n        border:1px solid #999;\n        box-shadow: 0 1px 2px rgba(0,0,0,0.2);\n    \"\u003e\n      \u003cb\u003e6\u003c/b\u003e \u2022 Sherbrooke\u003cbr/\u003e10\u201311 oct 2025\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [260, 36] });
+    marker_3416f8d02053722f6de6446fe977ea5a.setIcon(div_icon_04adb7d2bd0bf2846df6c4fc227ad7a9);
+
+
+    var marker_cf64b2d0087c4c9f230c1c9904619960 = L.marker(
+        [45.509, -73.5619],
+        {}
+    ).addTo(map_bb56f90a1085d4469e71b3e227427f67);
+
+
+    var div_icon_1bb6f824c38841792a27e59d16c56512 = L.divIcon({ "className": "empty", "html": "\n    \u003cdiv style=\"\n        white-space:nowrap;\n        font-size:14px;\n        background:rgba(255,255,255,0.9);\n        padding:2px 8px;\n        border-radius:6px;\n        border:1px solid #999;\n        box-shadow: 0 1px 2px rgba(0,0,0,0.2);\n    \"\u003e\n      \u003cb\u003e7\u003c/b\u003e \u2022 Montr\u00e9al (Best Western Plus)\u003cbr/\u003e12\u201314 oct 2025\n    \u003c/div\u003e\n    ", "iconAnchor": [0, 0], "iconSize": [260, 36] });
+    marker_cf64b2d0087c4c9f230c1c9904619960.setIcon(div_icon_1bb6f824c38841792a27e59d16c56512);
+
 </script>
+
 </html>
